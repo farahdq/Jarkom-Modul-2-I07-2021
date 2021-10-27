@@ -85,7 +85,7 @@ Edit the file `/etc/bind/kaizoku/franky.i07.com` by adding:
         super   IN  NS  ns1
 </pre>
 
-*SS nya*
+![Screenshot (814)](https://user-images.githubusercontent.com/73812417/139094621-9a020cf5-949b-4f43-827c-1668c54d56ea.png)
 
 Then add the zone to `/etc/bind/named.conf.local` by adding:
 <pre>
@@ -95,12 +95,12 @@ Then add the zone to `/etc/bind/named.conf.local` by adding:
     };
 </pre>
 
-*SS nya*
+![Screenshot (815)](https://user-images.githubusercontent.com/73812417/139094776-833dcae7-c348-4a1d-9030-290da92c4b3a.png)
+
 
 Then copy `/etc/bind/db.local` to `/etc/bind/kaizoku/super.franky.i07.com`\
 Then configure the file to have a SOA `super.franky.i07.com.`, NS `super.franky.i07.com.`, record A which leads to `IP Skypie`, and CNAME `www` at `super.franky.i07.com.`
-
-*SS nya*
+![3 3](https://user-images.githubusercontent.com/73812417/139095496-afcf269f-e2a1-492f-b9a2-fefd66cd82ea.jpeg)
 
 ## No 4
 
@@ -114,12 +114,14 @@ First, add a zone to `/etc/bind/named.conf.local` by adding:
     };
 </pre>
 
-*SS nya*
+![4 1](https://user-images.githubusercontent.com/73812417/139095885-07719498-563d-4f2c-b3fe-e77c11c0db88.jpeg)
+
 
 Then copy `/etc/bind/db.local` to `/etc/bind/kaizoku/2.41.10.in-addr.arpa`\ 
 Then configure the file to have SOA `franky.i07.com.`, `2.41.10.in-addr.arpa.` which has NS `franky.i07.com.`, and `2` which is the 4th byte of ENIESLobby IP has PTR `franky.i07.com.`
 
-*SS nya*
+
+![4 2](https://user-images.githubusercontent.com/73812417/139096062-615483d3-ea1f-48e4-9bc7-9b0709ae2238.jpeg)
 
 ## No 5
 
@@ -136,7 +138,7 @@ On EniesLobby, edit the `franky.i07.com` zone on `/etc/bind/named.conf.local` to
     };
 </pre>
 
-*SS nya*
+![5 1](https://user-images.githubusercontent.com/73812417/139096229-aa19f4a5-6ff8-41bc-99c5-f79b126fb8fd.jpeg)
 
 On Water7, run the `apt-get update` and `apt-get install bind9 -y` command to install bind9
 
@@ -149,7 +151,8 @@ Then edit '/etc/bind/named.conf.local' by adding:
     };
 </pre>
 
-*SS nya*
+![5 2](https://user-images.githubusercontent.com/73812417/139096445-b02c5d63-7c01-4db7-9d93-4d46bec8b051.jpeg)
+
 
 ## No 6
 
@@ -161,19 +164,17 @@ On EniesLobby, edit the file `/etc/bind/kaizoku/franky.i07.com` by adding:
         mecha   IN  NS  ns2
 </pre>
 
-*SS nya*
+![6 1](https://user-images.githubusercontent.com/73812417/139096597-2a6cf7f0-ff3f-4a66-8598-d43b46eb07da.jpeg)
 
 Then edit the file `/etc/bind/named.conf.options` with the comment section `dnssec-validation auto;` and add the line `allow-query{any;};`
 
-*SS nya*
+![6 2](https://user-images.githubusercontent.com/73812417/139096746-9a9d4cba-94f9-466f-99e0-ea7a432c37e3.jpeg)
 
 Make sure there is already a line `allow-transfer { "IP Water7"; };`  in the zone `franky.i07om` in the file `/etc/bind/named.conf.local`
 
-*SS nya*
-
 On Water7, edit the file `/etc/bind/named.conf.options` with the comment section `dnssec-validation auto;` and add the line `allow-query{any;};`
 
-*SS nya*
+![6 3](https://user-images.githubusercontent.com/73812417/139097714-f4305bc3-44b8-4891-b4d5-d3bff9dc1dfa.jpeg)
 
 Then add the zone to `/etc/bind/named.conf.local` by adding:
 <pre>
@@ -183,12 +184,12 @@ Then add the zone to `/etc/bind/named.conf.local` by adding:
     };
 </pre>
 
-*SS nya*
+![6 4](https://user-images.githubusercontent.com/73812417/139097809-a10516de-0587-4f58-a47b-9a4348a80161.jpeg)
 
 Then created sunnygo folder in `/etc/bind` Then copy `/etc/bind/db.local` to `/etc/bind/sunnygo/mecha.franky.i07.com`\
 Then configure the file to have a SOA `mecha.franky.i07.com.`, NS `mecha.franky.i07.com.`, record A leading to `IP Skypie`, and CNAME `www` on `mecha.franky.i07om.`
 
-*SS nya*
+![6 5](https://user-images.githubusercontent.com/73812417/139097968-b5caf0c6-5119-4eeb-b40e-9df44507e3b0.jpeg)
 
 
 ## No 7
@@ -201,7 +202,7 @@ On Water7, edit the file `/etc/bind/sunnygo/mecha.franky.i07.com` by adding:
         general IN  NS  ns1
 </pre>
 
-*SS nya*
+![7 1](https://user-images.githubusercontent.com/73812417/139098109-dd0ca4a1-0183-4732-a604-a0df9f2e4b18.jpeg)
 
 Then add the zone to `/etc/bind/named.conf.local` by adding:
 <pre>
@@ -211,12 +212,12 @@ Then add the zone to `/etc/bind/named.conf.local` by adding:
     };
 </pre>
 
-*SS nya*
+![7 2](https://user-images.githubusercontent.com/73812417/139098219-881351aa-46e8-4f18-bbe2-6653a6456d49.jpeg)
 
 Then copy `/etc/bind/db.local` to `/etc/bind/sunnygo/general.mecha.franky.i07.com` 
 Then configure the file to have SOA `general.mecha.franky.i07.com.`', NS `general.mecha.franky.i07.com.`, record A which leads to `IP Skypie`, and CNAME `www` on `general.mecha.franky.i07.com.`
 
-*SS nya*
+![7 3](https://user-images.githubusercontent.com/73812417/139098371-c7b2448b-0c53-43ed-ad19-c244e7e766f0.jpeg)
 
 
 ## No 8
@@ -250,7 +251,7 @@ After that, move to the directory `/etc/apache2/sites-available` Then copy the `
 
 Then set the file `franky.i07.com.conf` to have the lines `ServerName franky.i07.com`, `ServerAlias www.franky.i07.com`, and `DocumentRoot /var/www/franky.i07.com`
 
-*SS nya*
+![8](https://user-images.githubusercontent.com/73812417/139098705-662c6b54-4da9-421b-94e2-a8f89a3c6633.jpeg)
 
 Then create a new directory with the name `franky.i07.com` on `/var/www/` using the command `mkdir/var/www/franky.i07.com` 
 Then copy the contents of the 'franky' folder that has been downloaded to `/var/www/franky.i07.com`
@@ -273,7 +274,7 @@ Then move to the directory `/var/www/franky.i07.com` and create a `.htaccess` fi
     RewriteRule ^home$ index.php/home
 </pre>
 
-*SS nya*
+![9 1](https://user-images.githubusercontent.com/73812417/139098858-a8c0d281-e48f-441f-9883-88f551727edd.jpeg)
 
 Then open the file `/etc/apache2/sites-available/franky.i07.com.conf` and add:
 <pre>
@@ -285,7 +286,8 @@ Then open the file `/etc/apache2/sites-available/franky.i07.com.conf` and add:
 ```
 </pre>
 
-*SS nya*
+![9 2](https://user-images.githubusercontent.com/73812417/139099019-fb2c2cf2-48ed-4220-8d40-409f80367c19.jpeg)
+
 
 ## No 10
 
@@ -293,18 +295,14 @@ After that, on the subdomain of www.super.franky.yyy.com, Luffy needs to store a
 
 First, move to the `/etc/apache2/sites-available` directory. Then copy the `000-default.conf` file into the file `super.franky.i07.com.conf`
 
-*SS nya*
-
 Then set the file `super.franky.i07.com.conf` to have the lines `ServerName super.franky.i07.com`, `ServerAlias www.super.franky.i07.com`, and `DocumentRoot /var/www/super.franky.i07.com`
 
-*SS nya*
+![10 1](https://user-images.githubusercontent.com/73812417/139099270-37e38c12-72f3-4784-a915-69dfcae06107.jpeg)
 
 Then create a new directory with the name `super.franky.i07.com` on `/var/www/` using the command `mkdir/var/www/super.franky.i07.com`
 Then copy the contents of the 'super.franky' folder that has been downloaded to `/var/www/super.franky.i07.com`
 
 After that run the command `a2ensite super.franky.i07.com` and `apache2 service restart`
-
-*SS nya*
 
 
 ## No 11
@@ -320,7 +318,7 @@ Move to the `/etc/apache2/sites-available` directory then open the `super.franky
 ```
 </pre>
 
-*SS nya*
+![11 1](https://user-images.githubusercontent.com/73812417/139099453-32632c89-dedd-4a8e-b03e-7f3a1c21f1e6.jpeg)
 
 
 ## No 12
@@ -332,7 +330,7 @@ Move to the `/etc/apache2/sites-available` directory then open the `super.franky
         ErrorDocument 404/error/404.html
 </pre>
 
-*SS nya*
+![12 1](https://user-images.githubusercontent.com/73812417/139099597-8c9827c1-4b21-41cf-9edd-77393cc24930.jpeg)
 
 
 ## No 13
@@ -344,6 +342,8 @@ Move to the `/etc/apache2/sites-available` directory then open the `super.franky
         Alias "/js" "/var/www/super.franky.i07.com/public/js"
 </pre>
 
+![13 1](https://user-images.githubusercontent.com/73812417/139099726-20ee2a3f-1e5d-4f35-aa04-7b2f2e4adb5f.jpeg)
+
 
 ## No 14
 
@@ -351,11 +351,9 @@ And Luffy asked for web www.general.mecha.franky.yyy.com can only be accessed wi
 
 First, move to the `/etc/apache2/sites-available` directory. Then copy the `000-default.conf` file into the file `general.mecha.franky.i07.com.conf`
 
-*SS nya*
-
 Then set the file `general.mecha.franky.i07.com.conf` to have `<VirtualHost *:15000 *:15500>`, line `ServerName general.mecha.franky.i07.com`, `ServerAlias www.general.mecha.franky.i07.com`, and `DocumentRoot /var/www/general.mecha.franky.i07.com`
 
-*SS nya*
+![14 2](https://user-images.githubusercontent.com/73812417/139100051-fa200183-132e-4ad2-bcef-6aea4700c4df.jpeg)
 
 Then add ports 15000 and 15500 to the `/etc/apache2/ports.conf` file by adding:
 <pre>
@@ -363,14 +361,12 @@ Then add ports 15000 and 15500 to the `/etc/apache2/ports.conf` file by adding:
     Listen 15500
 </pre>
 
-*SS nya*
+![14 3](https://user-images.githubusercontent.com/73812417/139100295-0fbf13fb-6c56-4b99-8e52-94caf1839949.jpeg)
 
 Then create a new directory with the name `general.mecha.franky.i07.com` on `/var/www/` using the command `mkdir/var/www/general.mecha.franky.i07.com` 
 Then copy the contents of the 'general.mecha.franky' folder that has been downloaded to `/var/www/general.mecha.franky.i07.com`
 
 After that run the command `a2ensite general.mecha.franky.i07.com` and `apache2 service restart`
-
-*SS nya*
 
 
 ## No 15
@@ -378,8 +374,6 @@ After that run the command `a2ensite general.mecha.franky.i07.com` and `apache2 
 with the authentication of luffy username and onepiece password and file at /var/www/general.mecha.franky.yyy
 
 First, run the command `htpasswd -c /etc/apache2/.htpasswd luffy` to create a file that stores username and password into the file `/etc/apache2/.htpasswd` with user `luffy`, then there will be a prompt to enter and confirm the password.
-
-*SS nya*
 
 Then, edit the file '`/etc/apache2/sites-available/general.mecha.franky.i07.com.conf`' by adding:
 <pre>
@@ -391,7 +385,7 @@ Then, edit the file '`/etc/apache2/sites-available/general.mecha.franky.i07.com.
 ```
 </pre>
 
-*SS nya*
+![15 1](https://user-images.githubusercontent.com/73812417/139101473-b64d6dc7-7ce2-4100-89a1-72cf09a11efc.jpeg)
 
 Then, edit the file '`/var/www/general.mecha.franky.i07.com/.htaccess`' to:
 <pre>
@@ -401,7 +395,7 @@ Then, edit the file '`/var/www/general.mecha.franky.i07.com/.htaccess`' to:
     Require valid-user
 </pre>
 
-*SS nya*
+![15 2](https://user-images.githubusercontent.com/73812417/139100716-a9100ed4-5e20-479a-a6e5-5aaf92780003.jpeg)
 
 
 ## No 16
@@ -416,7 +410,7 @@ Because we can't access EniesLobby's IP, the IP we switched to is when accessing
     RewriteRule ^(.*)$ http://www.franky.i07.com [L,R=301]
 </pre>
 
-*SS nya*
+![16 1](https://user-images.githubusercontent.com/73812417/139100824-78eb8112-0052-469b-97db-99fd53c2451f.jpeg)
 
 Then, edit the file `/etc/apache2/sites-available/000-default.conf` by adding:
 <pre>
@@ -428,7 +422,7 @@ Then, edit the file `/etc/apache2/sites-available/000-default.conf` by adding:
 ```
 </pre>
 
-*SS nya*
+![16 2](https://user-images.githubusercontent.com/73812417/139100921-2d12f6e9-75b5-4876-a860-103439e5b528.jpeg)
 
 
 ## No 17
@@ -445,7 +439,7 @@ First, edit the file `/etc/apache2/sites-available/super.franky.i07.com.conf` by
 ```
 </pre>
 
-*SS nya*
+![17 1](https://user-images.githubusercontent.com/73812417/139101046-d11b6413-9e22-46c8-a97d-b9cb917aa485.jpeg)
 
 Then, edit the file `/var/www/super.franky.i07.com/.htaccess` by adding:
 <pre>
@@ -453,5 +447,7 @@ Then, edit the file `/var/www/super.franky.i07.com/.htaccess` by adding:
     RewriteRule ^(.*)franky(.*)\. (jpg|gif|png)$ http://super.franky.i07.com/public/images/franky.png [L,R]
 </pre>
 
-*SS nya*
+![17 2](https://user-images.githubusercontent.com/73812417/139101244-7f9bf941-5af6-49f1-8503-7c966e013e02.jpeg)
+
+
 
