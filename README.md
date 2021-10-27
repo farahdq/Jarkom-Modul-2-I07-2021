@@ -231,16 +231,16 @@ Then do 'wget' to download the required file. After that unzip it and remove the
 
 `wget https://raw.githubusercontent.com/FeinardSlim/Praktikum-Modul-2-Jarkom/main/franky.zip` \
 `wget https://raw.githubusercontent.com/FeinardSlim/Praktikum-Modul-2-Jarkom/main/general.mecha.franky.zip` \
-`wget https://raw.githubusercontent.com/FeinardSlim/Praktikum-Modul-2-Jarkom/main/super.franky.zip` \
+`wget https://raw.githubusercontent.com/FeinardSlim/Praktikum-Modul-2-Jarkom/main/super.franky.zip` 
 
 `unzip franky.zip` \
-`rm -r franky.zip` \
+`rm -r franky.zip` 
 
 `unzip general.mecha.franky.zip` \
-`rm -r general.mecha.franky.zip` \
+`rm -r general.mecha.franky.zip` 
 
 `unzip super.franky.zip` \
-`rm -r super.franky.zip` \
+`rm -r super.franky.zip` 
 
 *SS nya*
 
@@ -277,10 +277,12 @@ Then move to the directory `/var/www/franky.i07.com` and create a `.htaccess` fi
 
 Then open the file `/etc/apache2/sites-available/franky.i07.com.conf` and add:
 <pre>
+```
     <Directory/var/www/franky.i07.com>
         Options +FollowSymLinks -Multiviews
         AllowOverride All
     </Directory>
+```
 </pre>
 
 *SS nya*
@@ -311,9 +313,11 @@ However, in the /public folder, Luffy wants to only be able to directory listing
 
 Move to the `/etc/apache2/sites-available` directory then open the `super.franky.i07.com` file and add:
 <pre>
+```
     <Directory/var/www/super.franky.i07.com/public>
         Options +Indexes
     </Directory>
+```
 </pre>
 
 *SS nya*
@@ -379,10 +383,12 @@ First, run the command `htpasswd -c /etc/apache2/.htpasswd luffy` to create a fi
 
 Then, edit the file '`/etc/apache2/sites-available/general.mecha.franky.i07.com.conf`' by adding:
 <pre>
+```
     <Directory/var/www/general.mecha.franky.i07.com>
         Options +FollowSymLinks -Multiviews
         AllowOverride All
     </Directory>
+```
 </pre>
 
 *SS nya*
@@ -414,10 +420,12 @@ Because we can't access EniesLobby's IP, the IP we switched to is when accessing
 
 Then, edit the file `/etc/apache2/sites-available/000-default.conf` by adding:
 <pre>
+```
     <Directory/var/www/html>
         Options +FollowSymLinks -Multiviews
         AllowOverride All
     </Directory>
+```
 </pre>
 
 *SS nya*
@@ -429,10 +437,12 @@ Because Franky also wants to invite his friend to be able to contact him through
 
 First, edit the file `/etc/apache2/sites-available/super.franky.i07.com.conf` by adding:
 <pre>
+```
     <Directory/var/www/super.franky.i07.com>
         Options +FollowSymLinks -Multiviews
         AllowOverride All
     </Directory>
+```
 </pre>
 
 *SS nya*
