@@ -98,7 +98,7 @@ Then add the zone to `/etc/bind/named.conf.local` by adding:
 *SS nya*
 
 Then copy `/etc/bind/db.local` to `/etc/bind/kaizoku/super.franky.i07.com`\
-Then configure the file to have a SOA `super.franky.i07.com.`, NS `super.franky.i07.com.`, record A which leads to `IP Skypie`, and CNAME `www` at `super.franky.i07.com.`.
+Then configure the file to have a SOA `super.franky.i07.com.`, NS `super.franky.i07.com.`, record A which leads to `IP Skypie`, and CNAME `www` at `super.franky.i07.com.`
 
 *SS nya*
 
@@ -151,28 +151,297 @@ Then edit '/etc/bind/named.conf.local' by adding:
 
 *SS nya*
 
+## No 6
+
+After that there is a subdomain mecha.franky.yyy.com with the alias www.mecha.franky.yyy.com delegated from EniesLobby to Water7 with IP to Skypie in sunnygo folder.
+
+On EniesLobby, edit the file `/etc/bind/kaizoku/franky.i07.com` by adding:
+<pre>
+        ns2     IN  A   10.41.2.3; IP Water7
+        mecha   IN  NS  ns2
+</pre>
+
+*SS nya*
+
+Then edit the file `/etc/bind/named.conf.options` with the comment section `dnssec-validation auto;` and add the line `allow-query{any;};`
+
+*SS nya*
+
+Make sure there is already a line `allow-transfer { "IP Water7"; };`  in the zone `franky.i07om` in the file `/etc/bind/named.conf.local`
+
+*SS nya*
+
+On Water7, edit the file `/etc/bind/named.conf.options` with the comment section `dnssec-validation auto;` and add the line `allow-query{any;};`
+
+*SS nya*
+
+Then add the zone to `/etc/bind/named.conf.local` by adding:
+<pre>
+    zone "mecha.franky.i07.com"}
+            type master;
+            file "/etc/bind/sunnygo/mecha.franky.i07.com";
+    };
+</pre>
+
+*SS nya*
+
+Then created sunnygo folder in `/etc/bind` Then copy `/etc/bind/db.local` to `/etc/bind/sunnygo/mecha.franky.i07.com`\
+Then configure the file to have a SOA `mecha.franky.i07.com.`, NS `mecha.franky.i07.com.`, record A leading to `IP Skypie`, and CNAME `www` on `mecha.franky.i07om.`
+
+*SS nya*
 
 
+## No 7
+
+To facilitate the communication of Luffy and his partner, a subdomain was created through Franky under the name general.mecha.franky.yyy.com with the alias www.general.mecha.franky.yyy.com leading to Skypie.
+
+On Water7, edit the file `/etc/bind/sunnygo/mecha.franky.i07.com` by adding:
+<pre>
+        ns1     IN  A   192.194.2.4 ; IP Skypie
+        general IN  NS  ns1
+</pre>
+
+*SS nya*
+
+Then add the zone to `/etc/bind/named.conf.local` by adding:
+<pre>
+    zone "general.mecha.franky.i07.com" {
+            type master;
+            file "/etc/bind/sunnygo/general.mecha.franky.i07.com";
+    };
+</pre>
+
+*SS nya*
+
+Then copy `/etc/bind/db.local` to `/etc/bind/sunnygo/general.mecha.franky.i07.com` 
+Then configure the file to have SOA `general.mecha.franky.i07.com.`', NS `general.mecha.franky.i07.com.`, record A which leads to `IP Skypie`, and CNAME `www` on `general.mecha.franky.i07.com.`
+
+*SS nya*
 
 
+## No 8
+
+After configuring the server, the Webserver configuration is carried out. First with the webserver www.franky.yyy.com. First, luffy needs a webserver with DocumentRoot at /var/www/franky.yyy.com.
+
+On Skypie, run command `apt-get update` then, install apache2 using command `apt-get install apache2 -y`, and do it also for installing php using command `apt-get install php -y` and lastly `apt-get install libapache2-mod-php7.0 -y`
+
+*SS nya*
+
+Then do 'wget' to download the required file. After that unzip it and remove the trash using the command :
+
+`wget https://raw.githubusercontent.com/FeinardSlim/Praktikum-Modul-2-Jarkom/main/franky.zip` \
+`wget https://raw.githubusercontent.com/FeinardSlim/Praktikum-Modul-2-Jarkom/main/general.mecha.franky.zip` \
+`wget https://raw.githubusercontent.com/FeinardSlim/Praktikum-Modul-2-Jarkom/main/super.franky.zip` \
+
+`unzip franky.zip` \
+`rm -r franky.zip` \
+
+`unzip general.mecha.franky.zip` \
+`rm -r general.mecha.franky.zip` \
+
+`unzip super.franky.zip` \
+`rm -r super.franky.zip` \
+
+*SS nya*
+
+After that, move to the directory `/etc/apache2/sites-available` Then copy the `000-default.conf` file into the file `franky.i07.com.conf`
+
+*SS nya*
+
+Then set the file `franky.i07.com.conf` to have the lines `ServerName franky.i07.com`, `ServerAlias www.franky.i07.com`, and `DocumentRoot /var/www/franky.i07.com`
+
+*SS nya*
+
+Then create a new directory with the name `franky.i07.com` on `/var/www/` using the command `mkdir/var/www/franky.i07.com` 
+Then copy the contents of the 'franky' folder that has been downloaded to `/var/www/franky.i07.com`
+
+*SS nya*
+
+After that run the command `a2ensite franky.i07.com` and `apache2 service restart`
+
+*SS nya*
+
+## No 9
+
+After that, Luffy also needs that the url www.franky.yyy.com/index.php/home can become a www.franky.yyy.com/home.
+
+First, run the command `a2enmod rewrite` then `apache2 restart service`
+
+Then move to the directory `/var/www/franky.i07.com` and create a `.htaccess` file with the contents of the file:
+<pre>
+    RewriteEngine On
+    RewriteRule ^home$ index.php/home
+</pre>
+
+*SS nya*
+
+Then open the file `/etc/apache2/sites-available/franky.i07.com.conf` and add:
+<pre>
+    <Directory/var/www/franky.i07.com>
+        Options +FollowSymLinks -Multiviews
+        AllowOverride All
+    </Directory>
+</pre>
+
+*SS nya*
+
+## No 10
+
+After that, on the subdomain of www.super.franky.yyy.com, Luffy needs to store assets that have DocumentRoot at /var/www/super.franky.yyy.com
+
+First, move to the `/etc/apache2/sites-available` directory. Then copy the `000-default.conf` file into the file `super.franky.i07.com.conf`
+
+*SS nya*
+
+Then set the file `super.franky.i07.com.conf` to have the lines `ServerName super.franky.i07.com`, `ServerAlias www.super.franky.i07.com`, and `DocumentRoot /var/www/super.franky.i07.com`
+
+*SS nya*
+
+Then create a new directory with the name `super.franky.i07.com` on `/var/www/` using the command `mkdir/var/www/super.franky.i07.com`
+Then copy the contents of the 'super.franky' folder that has been downloaded to `/var/www/super.franky.i07.com`
+
+After that run the command `a2ensite super.franky.i07.com` and `apache2 service restart`
+
+*SS nya*
 
 
+## No 11
+
+However, in the /public folder, Luffy wants to only be able to directory listings only.
+
+Move to the `/etc/apache2/sites-available` directory then open the `super.franky.i07.com` file and add:
+<pre>
+    <Directory/var/www/super.franky.i07.com/public>
+        Options +Indexes
+    </Directory>
+</pre>
+
+*SS nya*
 
 
+## No 12
+
+Not only that, Luffy also set up a 404.html error file in the /errors folder to replace the code error on apache.
+
+Move to the `/etc/apache2/sites-available` directory then open the `super.franky.i07.com` file and add:
+<pre>
+        ErrorDocument 404/error/404.html
+</pre>
+
+*SS nya*
 
 
+## No 13
+
+Luffy also asked Nami to create a virtual host configuration. This virtual host aims to be able to access asset files www.super.franky.yyy.com/public/js becomes a www.super.franky.yyy.com/js.
+
+Move to the `/etc/apache2/sites-available` directory then open the `super.franky.i07.com` file and add:
+<pre>
+        Alias "/js" "/var/www/super.franky.i07.com/public/js"
+</pre>
 
 
+## No 14
+
+And Luffy asked for web www.general.mecha.franky.yyy.com can only be accessed with port 15000 and port 15500.
+
+First, move to the `/etc/apache2/sites-available` directory. Then copy the `000-default.conf` file into the file `general.mecha.franky.i07.com.conf`
+
+*SS nya*
+
+Then set the file `general.mecha.franky.i07.com.conf` to have `<VirtualHost *:15000 *:15500>`, line `ServerName general.mecha.franky.i07.com`, `ServerAlias www.general.mecha.franky.i07.com`, and `DocumentRoot /var/www/general.mecha.franky.i07.com`
+
+*SS nya*
+
+Then add ports 15000 and 15500 to the `/etc/apache2/ports.conf` file by adding:
+<pre>
+    Listen 15000
+    Listen 15500
+</pre>
+
+*SS nya*
+
+Then create a new directory with the name `general.mecha.franky.i07.com` on `/var/www/` using the command `mkdir/var/www/general.mecha.franky.i07.com` 
+Then copy the contents of the 'general.mecha.franky' folder that has been downloaded to `/var/www/general.mecha.franky.i07.com`
+
+After that run the command `a2ensite general.mecha.franky.i07.com` and `apache2 service restart`
+
+*SS nya*
 
 
+## No 15
+
+with the authentication of luffy username and onepiece password and file at /var/www/general.mecha.franky.yyy
+
+First, run the command `htpasswd -c /etc/apache2/.htpasswd luffy` to create a file that stores username and password into the file `/etc/apache2/.htpasswd` with user `luffy`, then there will be a prompt to enter and confirm the password.
+
+*SS nya*
+
+Then, edit the file '`/etc/apache2/sites-available/general.mecha.franky.i07.com.conf`' by adding:
+<pre>
+    <Directory/var/www/general.mecha.franky.i07.com>
+        Options +FollowSymLinks -Multiviews
+        AllowOverride All
+    </Directory>
+</pre>
+
+*SS nya*
+
+Then, edit the file '`/var/www/general.mecha.franky.i07.com/.htaccess`' to:
+<pre>
+    AuthType Basic
+    AuthName "Restricted Content"
+    AuthUserFile /etc/apache2/.htpasswd
+    Require valid-user
+</pre>
+
+*SS nya*
 
 
+## No 16
+
+And every time you access an EniesLobby IP, it will be automatically accessed to www.franky.yyy.com
+
+Because we can't access EniesLobby's IP, the IP we switched to is when accessing Skypie IP. Then, edit the `/var/www/html/.htaccess` file by adding:
+<pre>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{HTTP_HOST} ^10\.41\.2\.4$
+    RewriteRule ^(.*)$ http://www.franky.i07.com [L,R=301]
+</pre>
+
+*SS nya*
+
+Then, edit the file `/etc/apache2/sites-available/000-default.conf` by adding:
+<pre>
+    <Directory/var/www/html>
+        Options +FollowSymLinks -Multiviews
+        AllowOverride All
+    </Directory>
+</pre>
+
+*SS nya*
 
 
+## No 17
 
+Because Franky also wants to invite his friend to be able to contact him through the website www.super.franky.yyy.com, and because web server visitors will definitely be confused by the random images, Franky also asks to replace the request of images that have substring "franky" will be directed towards Franky.png.
 
+First, edit the file `/etc/apache2/sites-available/super.franky.i07.com.conf` by adding:
+<pre>
+    <Directory/var/www/super.franky.i07.com>
+        Options +FollowSymLinks -Multiviews
+        AllowOverride All
+    </Directory>
+</pre>
 
+*SS nya*
 
+Then, edit the file `/var/www/super.franky.i07.com/.htaccess` by adding:
+<pre>
+    RewriteEngine On
+    RewriteRule ^(.*)franky(.*)\. (jpg|gif|png)$ http://super.franky.i07.com/public/images/franky.png [L,R]
+</pre>
 
-
+*SS nya*
 
