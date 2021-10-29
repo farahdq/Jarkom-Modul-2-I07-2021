@@ -75,7 +75,9 @@ Then edit `/etc/bind/named.conf.local` by adding:
 
 Then created kaizoku folder in `/etc/bind`. Then copy `/etc/bind/db.local` to `/etc/bind/kaizoku/franky.i07.com`\
 Then configure the file to have SOA `franky.i07.com.`, NS `franky.i07.com.`, record A which leads to `IP Skypie`, and CNAME `www` on `franky.i07.com.`\
-*SS nya*
+
+![2 2](https://user-images.githubusercontent.com/73812417/139356485-428cc8a2-1283-4a1f-a044-31b76698e76f.jpeg)
+
 
 ## No 3
 
