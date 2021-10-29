@@ -19,21 +19,27 @@ There are :
 Then, don't forget to configure the network for each of them
 
 ![image](https://user-images.githubusercontent.com/73812417/139353876-951e27fb-74b3-4abc-9c7d-e6ad8577a835.png)
+
 Network Configure Foosha
 
 ![image](https://user-images.githubusercontent.com/73812417/139353917-f6015e72-9c1e-4412-b882-a70e7bd57069.png)
+
 Network Configure Loguetown
 
 ![image](https://user-images.githubusercontent.com/73812417/139353952-e0088e47-a500-46ad-bd81-868ffb0a420c.png)
+
 Network Configure Alabasta
 
 ![image](https://user-images.githubusercontent.com/73812417/139353985-794ce289-9fdd-45b0-bf10-bb7c4312c9b3.png)
+
 Network Configure Ennieslobby
 
 ![image](https://user-images.githubusercontent.com/73812417/139354028-5546654b-5825-49c6-9e70-b2d14e12ff76.png)
+
 Network Configure Water7
 
 ![image](https://user-images.githubusercontent.com/73812417/139354047-777ee2ba-d2f9-40ef-9d8c-04a49d232f02.png)
+
 Network Configure Skypie
 
 
