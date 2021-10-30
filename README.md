@@ -45,18 +45,7 @@ Network Configure Water7
 Network Configure Skypie
 
 
-## No 1
 
-EniesLobby will be used as DNS Master, Water7 will be used as DNS Slave, and Skypie will be used as a Web Server. There are 2 clients namely Loguetown, and Alabasta. All nodes are connected to the Foosha router, so they can access the internet.
-
-Run command `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.41.0.0/16` used to connect to the outside network on the 'Foosha' router\
-*SS nya*
-
-Then, add command `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.41.0.0/16` to `/root/.bashrc` to run every time the project is started with command `echo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.41.0.0/16" >> /root/.bashrc`\
-*SS nya*
-
-After that on all other nodes added the command `echo "nameserver 10.41.122.0"` for setting the DNS IP to `/root/.bashrc` to run every time the project is started with the command `echo echo "nameserver 10.41.122.1" > /etc/resolv.conf >> /root/.bashrc'`\
-*SS nya*
 
 
 ## No 2
