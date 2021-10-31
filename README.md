@@ -264,7 +264,7 @@ Then copy the contents of the 'franky' folder that has been downloaded to `/var/
 
 *SS nya*
 
-After that run the command `a2ensite franky.i07.com` and `apache2 service restart`
+After that run the command `a2ensite franky.i07.com` and `service apache2 restart`
 
 *SS nya*
 
@@ -272,7 +272,7 @@ After that run the command `a2ensite franky.i07.com` and `apache2 service restar
 
 After that, Luffy also needs that the url www.franky.yyy.com/index.php/home can become a www.franky.yyy.com/home.
 
-First, run the command `a2enmod rewrite` then `apache2 restart service`
+First, run the command `a2enmod rewrite` then `service apache2 restart`
 
 Then move to the directory `/var/www/franky.i07.com` and create a `.htaccess` file with the contents of the file:
 <pre>
@@ -308,7 +308,7 @@ Then set the file `super.franky.i07.com.conf` to have the lines `ServerName supe
 Then create a new directory with the name `super.franky.i07.com` on `/var/www/` using the command `mkdir/var/www/super.franky.i07.com`
 Then copy the contents of the 'super.franky' folder that has been downloaded to `/var/www/super.franky.i07.com`
 
-After that run the command `a2ensite super.franky.i07.com` and `apache2 service restart`
+After that run the command `a2ensite super.franky.i07.com` and `service apache2 restart`
 
 
 ## No 11
@@ -372,7 +372,7 @@ Then add ports 15000 and 15500 to the `/etc/apache2/ports.conf` file by adding:
 Then create a new directory with the name `general.mecha.franky.i07.com` on `/var/www/` using the command `mkdir/var/www/general.mecha.franky.i07.com` 
 Then copy the contents of the 'general.mecha.franky' folder that has been downloaded to `/var/www/general.mecha.franky.i07.com`
 
-After that run the command `a2ensite general.mecha.franky.i07.com` and `apache2 service restart`
+After that run the command `a2ensite general.mecha.franky.i07.com` and `service apache2 restart`
 
 
 ## No 15
