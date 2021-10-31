@@ -50,7 +50,8 @@ Network Configure Skypie
 EniesLobby will be used as DNS Master, Water7 will be used as DNS Slave, and Skypie will be used as a Web Server. There are 2 clients namely Loguetown, and Alabasta. All nodes are connected to the Foosha router, so they can access the internet.
 
 Run command `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.41.0.0/16` used to connect to the outside network on the 'Foosha' router\
-*SS nya*
+
+[![image.png](https://i.postimg.cc/D0VfKvWW/image.png)](https://postimg.cc/phZMftJx)
 
 Then, add command `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.41.0.0/16` to `/root/.bashrc` to run every time the project is started with command `echo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.41.0.0/16" >> /root/.bashrc`\
 *SS nya*
