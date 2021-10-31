@@ -58,7 +58,7 @@ Then, add command `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.41
 [![image.png](https://i.postimg.cc/J4vxVSxf/image.png)](https://postimg.cc/dLRrGHz6)
 
 After that on all other nodes added the command `echo "nameserver 10.41.122.0"` for setting the DNS IP to `/root/.bashrc` to run every time the project is started with the command `echo 'echo "nameserver 10.41.122.1" > /etc/resolv.conf >> /root/.bashrc'`
-*SS nya*
+[![image.png](https://i.postimg.cc/wxc3dNVg/image.png)](https://postimg.cc/rzsq1K3P)
 
 
 ## No 2
