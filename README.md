@@ -57,7 +57,7 @@ Then, add command `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.41
 
 
 
-After that on all other nodes added the command `echo "nameserver 192.168.122.0"` for setting the DNS IP to `/root/.bashrc` to run every time the project is started with the command `echo 'echo "nameserver 192.168.122.1" > /etc/resolv.conf >> /root/.bashrc'`
+After that on all other nodes added the command `echo "nameserver 192.168.122.1"` for setting the DNS IP to `/root/.bashrc` to run every time the project is started with the command `echo 'echo "nameserver 192.168.122.1" > /etc/resolv.conf >> /root/.bashrc'`
 
 
 
