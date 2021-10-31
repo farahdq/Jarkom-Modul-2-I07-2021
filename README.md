@@ -51,15 +51,15 @@ EniesLobby will be used as DNS Master, Water7 will be used as DNS Slave, and Sky
 
 Run command `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.41.0.0/16` used to connect to the outside network on the 'Foosha' router
 
-
+[![image.png](https://i.postimg.cc/x1SR1hJB/image.png)](https://postimg.cc/TpCmkkcc)
 
 Then, add command `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.41.0.0/16` to `/root/.bashrc` to run every time the project is started with command `echo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.41.0.0/16" >> /root/.bashrc`
 
-
+[![image.png](https://i.postimg.cc/4N1KpS2D/image.png)](https://postimg.cc/1ff5QJQB)
 
 After that on all other nodes added the command `echo "nameserver 192.168.122.1"` for setting the DNS IP to `/root/.bashrc` to run every time the project is started with the command `echo 'echo "nameserver 192.168.122.1" > /etc/resolv.conf >> /root/.bashrc'`
 
-
+[![image.png](https://i.postimg.cc/tT0RK3md/image.png)](https://postimg.cc/p9Zt8Fvy)
 
 ## No 2
 
