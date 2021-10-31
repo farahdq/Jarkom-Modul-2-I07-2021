@@ -59,8 +59,6 @@ Then, add command `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.41
 
 After that on all other nodes added the command `echo "nameserver 192.168.122.1"` for setting the DNS IP to `/root/.bashrc` to run every time the project is started with the command `echo 'echo "nameserver 192.168.122.1" > /etc/resolv.conf >> /root/.bashrc'`
 
-[![image.png](https://i.postimg.cc/tT0RK3md/image.png)](https://postimg.cc/p9Zt8Fvy)
-
 ## No 2
 
 Luffy wants to contact Franky who is in EniesLobby with denden mushi. You are asked luffy to create a main website by accessing franky.yyy.com with alias www.franky.yyy.com in the kaizoku folder.
