@@ -204,7 +204,7 @@ To facilitate the communication of Luffy and his partner, a subdomain was create
 
 On Water7, edit the file `/etc/bind/sunnygo/mecha.franky.i07.com` by adding:
 <pre>
-        ns1     IN  A   192.194.2.4 ; IP Skypie
+        ns1     IN  A   10.41.2.4 ; IP Skypie
         general IN  NS  ns1
 </pre>
 
